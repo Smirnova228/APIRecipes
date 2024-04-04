@@ -79,6 +79,7 @@ namespace EatsOnAPI.Controllers
                 {
                     return NotFound();
                 }
+                { }
                 else
                 {
                     throw;
@@ -102,7 +103,7 @@ namespace EatsOnAPI.Controllers
             try
             {
                 await _context.SaveChangesAsync();
-            }
+            }{ }
             catch (DbUpdateException)
             {
                 if (UserExists(user.IdUser))
@@ -128,6 +129,7 @@ namespace EatsOnAPI.Controllers
             {
                 return NotFound();
             }
+            { }
             var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
