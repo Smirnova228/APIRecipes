@@ -79,7 +79,6 @@ namespace EatsOnAPI.Controllers
                 {
                     return NotFound();
                 }
-                { }
                 else
                 {
                     throw;
@@ -87,7 +86,6 @@ namespace EatsOnAPI.Controllers
             }
 
             return NoContent();
-            { { } }
         }
 
         // POST: api/Users
@@ -103,7 +101,7 @@ namespace EatsOnAPI.Controllers
             try
             {
                 await _context.SaveChangesAsync();
-            }{ }
+            }
             catch (DbUpdateException)
             {
                 if (UserExists(user.IdUser))

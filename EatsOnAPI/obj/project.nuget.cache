@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HRK8oszOirAxR+cqK8od3sqb7wS35tb//Lvk9R+JDt9RkHphQND/4CgELUQmU75HsSNx1gArt/LcN2m6sGhzvw==",
+  "dgSpecHash": "SrvTvoGSGDmLKs9FrIw5CSWKkSiHRk91idzm+YmAvdI6FbdyuyPHcGCIY/1vUoDOCBUWaikiqfrtivVmJ3L7ew==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gigabyte\\source\\repos\\EatsOnAPI\\EatsOnAPI\\EatsOnAPI.csproj",
   "expectedPackageFiles": [
@@ -157,6 +157,7 @@
     "C:\\Users\\Gigabyte\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",
     "C:\\Users\\Gigabyte\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.2\\sqlitepclraw.lib.e_sqlite3.2.1.2.nupkg.sha512",
     "C:\\Users\\Gigabyte\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.2\\sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512",
+    "C:\\Users\\Gigabyte\\.nuget\\packages\\stylecop\\6.2.0\\stylecop.6.2.0.nupkg.sha512",
     "C:\\Users\\Gigabyte\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Gigabyte\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.5.0\\swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
     "C:\\Users\\Gigabyte\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
@@ -243,5 +244,16 @@
     "C:\\Users\\Gigabyte\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Gigabyte\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"StyleCop 6.2.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net6.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "StyleCop",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

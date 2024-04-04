@@ -1,0 +1,6 @@
+﻿namespace EatsOnAPI
+{
+    public class Settings
+    {
+    }
+}
