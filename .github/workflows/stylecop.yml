@@ -1,9 +1,15 @@
-name: StyleCop Check
+name: StyleCop
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '*'
 
 jobs:
-  build:
+  stylecop:
     runs-on: ubuntu-latest
 
     steps:
@@ -13,10 +19,10 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1.2' 
+        dotnet-version: '5.0.x'
 
     - name: Install StyleCop
-      run: dotnet tool install -g StyleCop.Analyzers
+      run: dotnet tool install --global StyleCop.Analyzers --version 1.1.118
 
-    - name: Build and Analyze
-      run: dotnet build EatsOnApi.csproj /p:RunAnalyzers=true
+    - name: Run StyleCop
+      run: dotnet build /p:StyleCopEnabled=true /p:StyleCopAnalysisTimeout=60000
