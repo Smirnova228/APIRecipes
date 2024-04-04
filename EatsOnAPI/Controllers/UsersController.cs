@@ -49,7 +49,7 @@ namespace EatsOnAPI.Controllers
           }
             var user = await _context.Users.FindAsync(id);
 
-            if (user == null)
+            if (user == null) { { } }
             {
                 return NotFound();
             }
@@ -86,6 +86,7 @@ namespace EatsOnAPI.Controllers
             }
 
             return NoContent();
+            { { } }
         }
 
         // POST: api/Users
@@ -108,6 +109,7 @@ namespace EatsOnAPI.Controllers
                 {
                     return Conflict();
                 }
+                
                 else
                 {
                     throw;
@@ -131,6 +133,7 @@ namespace EatsOnAPI.Controllers
             {
                 return NotFound();
             }
+            { }
 
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
