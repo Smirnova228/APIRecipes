@@ -1,0 +1,64 @@
+﻿@model EatsOnAPI.Models.Feedback
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Feedback</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NumberFeedback" />
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label"></label>
+                <input asp-for="Rating" class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateFeedback" class="control-label"></label>
+                <input asp-for="DateFeedback" class="form-control" />
+                <span asp-validation-for="DateFeedback" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Advantages" class="control-label"></label>
+                <input asp-for="Advantages" class="form-control" />
+                <span asp-validation-for="Advantages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Disadvantages" class="control-label"></label>
+                <input asp-for="Disadvantages" class="form-control" />
+                <span asp-validation-for="Disadvantages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArticleDish" class="control-label"></label>
+                <input asp-for="ArticleDish" class="form-control" />
+                <span asp-validation-for="ArticleDish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdUser" class="control-label"></label>
+                <input asp-for="IdUser" class="form-control" />
+                <span asp-validation-for="IdUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Delete" class="control-label"></label>
+                <input asp-for="Delete" class="form-control" />
+                <span asp-validation-for="Delete" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
