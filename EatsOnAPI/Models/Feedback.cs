@@ -13,6 +13,5 @@ namespace EatsOnAPI.Models
         public int ArticleDish { get; set; }
         public int IdUser { get; set; }
         public bool? Delete { get; set; }
-
     }
 }

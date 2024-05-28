@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using EatsOnAPI.Models;
 
 namespace EatsOnAPI.Models
 {
@@ -25,20 +26,15 @@ namespace EatsOnAPI.Models
         public virtual DbSet<Feedback> Feedbacks { get; set; } = null!;
         public virtual DbSet<Ingredient> Ingredients { get; set; } = null!;
         public virtual DbSet<Log> Logs { get; set; } = null!;
+        public virtual DbSet<Logss> Logsses { get; set; } = null!;
         public virtual DbSet<PartDay> PartDays { get; set; } = null!;
         public virtual DbSet<Property> Properties { get; set; } = null!;
+        public virtual DbSet<RecipeRequest> RecipeRequests { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
+        public virtual DbSet<UserQuestion> UserQuestions { get; set; } = null!;
         public virtual DbSet<Vitamin> Vitamins { get; set; } = null!;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-C5UL70C\\SQLEXPRESS;Initial Catalog=EatsOn;Persist Security Info=True;User ID=sa;Password=123");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -78,6 +74,24 @@ namespace EatsOnAPI.Models
                     .HasColumnName("name_component");
             });
 
+            modelBuilder.Entity<RequestIngredient>(entity =>
+            {
+                entity.HasKey(e => e.IDRequestIngredient)
+                    .HasName("PK_RequestIngredient");
+
+                entity.Property(e => e.IDRequestIngredient).HasColumnName("ID_RequestIngredient");
+
+                entity.Property(e => e.count).HasColumnName("count");
+
+                entity.Property(e => e.RequestId).HasColumnName("Request_ID");
+
+                entity.Property(e => e.name)
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("name");
+
+            });
+
             modelBuilder.Entity<DayPlan>(entity =>
             {
                 entity.HasKey(e => e.NumberPlan)
@@ -105,7 +119,6 @@ namespace EatsOnAPI.Models
                     .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("name_part");
-
             });
 
             modelBuilder.Entity<Dish>(entity =>
@@ -152,6 +165,24 @@ namespace EatsOnAPI.Models
                     .HasColumnType("decimal(28, 2)")
                     .HasColumnName("time_cook");
 
+                entity.Property(e => e.CuisineTypeID)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("CuisineTypeID");
+
+                entity.Property(e => e.DietTypeID)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("DietTypeID");
+
+                entity.Property(e => e.MealTimeID)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("MealTimeID");
+
+                entity.Property(e => e.Calories)
+                    .IsUnicode(false)
+                    .HasColumnName("Calories");
             });
 
             modelBuilder.Entity<DishComponent>(entity =>
@@ -189,6 +220,7 @@ namespace EatsOnAPI.Models
                     .HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.IdUser).HasColumnName("ID_user");
+
             });
 
             modelBuilder.Entity<Feedback>(entity =>
@@ -223,7 +255,6 @@ namespace EatsOnAPI.Models
                 entity.Property(e => e.Rating)
                     .HasColumnType("decimal(28, 2)")
                     .HasColumnName("rating");
-
             });
 
             modelBuilder.Entity<Ingredient>(entity =>
@@ -257,7 +288,6 @@ namespace EatsOnAPI.Models
                     .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("name_vitamin");
-
             });
 
             modelBuilder.Entity<Log>(entity =>
@@ -279,6 +309,21 @@ namespace EatsOnAPI.Models
 
             });
 
+            modelBuilder.Entity<Logss>(entity =>
+            {
+                entity.ToTable("Logss");
+
+                entity.Property(e => e.Level)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Message)
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Timestamp).HasColumnType("datetime");
+            });
+
             modelBuilder.Entity<PartDay>(entity =>
             {
                 entity.HasKey(e => e.NamePart)
@@ -294,6 +339,41 @@ namespace EatsOnAPI.Models
                 entity.Property(e => e.Delete)
                     .HasColumnName("delete")
                     .HasDefaultValueSql("((0))");
+            });
+
+            modelBuilder.Entity<CuisineTypes>(entity =>
+            {
+                entity.HasKey(e => e.CuisineName)
+                   .HasName("PK_CuisineName");
+
+                entity.ToTable("CuisineTypes");
+                entity.Property(e => e.CuisineName)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("CuisineName");
+            });
+
+
+            modelBuilder.Entity<DietTypes>(entity =>
+            {
+                entity.HasKey(e => e.DietTypeName)
+                  .HasName("PK_DietTypeName");
+                entity.ToTable("DietTypes");
+                entity.Property(e => e.DietTypeName)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("DietTypeName");
+            });
+
+            modelBuilder.Entity<MealTimes>(entity =>
+            {
+                entity.HasKey(e => e.MealTimeName)
+                  .HasName("PK_MealTimeName");
+                entity.ToTable("MealTimes");
+                entity.Property(e => e.MealTimeName)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("MealTimeName");
             });
 
             modelBuilder.Entity<Property>(entity =>
@@ -315,6 +395,43 @@ namespace EatsOnAPI.Models
                 entity.Property(e => e.DescriptionProperty)
                     .IsUnicode(false)
                     .HasColumnName("description_property");
+            });
+
+            modelBuilder.Entity<RecipeRequest>(entity =>
+            {
+                entity.HasKey(e => e.IdRecipeRequest);
+
+                entity.ToTable("Recipe_request");
+
+                entity.Property(e => e.IdRecipeRequest).HasColumnName("ID_Recipe_request");
+
+                entity.Property(e => e.Coast)
+                    .HasColumnType("decimal(28, 2)")
+                    .HasColumnName("coast");
+
+                entity.Property(e => e.DescriptionRecipe)
+                    .IsUnicode(false)
+                    .HasColumnName("description_recipe");
+
+                entity.Property(e => e.ImageRecipe)
+                    .IsUnicode(false)
+                    .HasColumnName("image_recipe");
+
+                entity.Property(e => e.NameRecipe)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("name_recipe");
+
+                entity.Property(e => e.UserId).HasColumnName("User_ID");
+                entity.Property(e => e.TimeCook)
+                   .HasColumnType("decimal(28, 2)")
+                   .HasColumnName("time_cook");
+
+                entity.Property(e => e.status)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("status");
+
             });
 
             modelBuilder.Entity<Role>(entity =>
@@ -375,14 +492,40 @@ namespace EatsOnAPI.Models
                     .HasColumnName("number_phone");
 
                 entity.Property(e => e.Password)
-                    .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("password");
 
                 entity.Property(e => e.Salt)
-                    .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("salt");
+            });
+
+            modelBuilder.Entity<UserQuestion>(entity =>
+            {
+                entity.HasKey(e => e.IdUserQuestion);
+
+                entity.ToTable("User_question");
+
+                entity.Property(e => e.IdUserQuestion).HasColumnName("ID_User_question");
+
+                entity.Property(e => e.DescriptionQuestion)
+                    .IsUnicode(false)
+                    .HasColumnName("description_question");
+
+                entity.Property(e => e.Status)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("status");
+
+
+                entity.Property(e => e.UserId).HasColumnName("User_ID");
+
+                entity.Property(e => e.Answer)
+       .IsUnicode(false)  // Assuming you want to keep consistency with other string properties.
+       .HasColumnName("answer")
+       .HasMaxLength(255)  // Explicitly stating there is no limit, but this is optional as strings are unlimited by default.
+       .IsRequired(false);  // Specifies that the column can contain null values.
+
             });
 
             modelBuilder.Entity<Vitamin>(entity =>
@@ -408,5 +551,13 @@ namespace EatsOnAPI.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<EatsOnAPI.Models.RequestIngredient>? RequestIngredient { get; set; }
+
+        public DbSet<EatsOnAPI.Models.DietTypes>? DietTypes { get; set; }
+
+        public DbSet<EatsOnAPI.Models.CuisineTypes>? CuisineTypes { get; set; }
+
+        public DbSet<EatsOnAPI.Models.MealTimes>? MealTimes { get; set; }
     }
 }

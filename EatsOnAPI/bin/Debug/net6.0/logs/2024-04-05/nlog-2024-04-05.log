@@ -1,0 +1,41 @@
+2024-04-05 09:26:18.4956|ERROR|Program|My Api stop(|System.Net.Sockets.SocketException (10049): Требуемый адрес для своего контекста неверен.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass30_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IEnumerable`1 listenOptions, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Microsoft.AspNetCore.Builder.WebApplication.Run(String url)
+   at Program.<Main>$(String[] args) in C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\Program.cs:line 90
+2024-04-05 12:30:38.2669|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:30:40.0859|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:30:41.6707|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:31:31.6243|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:31:33.6125|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:31:35.3265|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:31:44.3472|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:31:44.3472|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:31:52.5459|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:31:52.5459|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:31:57.1914|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:31:57.1914|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:32:19.8894|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:32:21.9994|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:32:23.5928|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:35:08.0949|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:35:09.8636|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог
+2024-04-05 12:35:11.6707|FATAL|EatsOnAPI.Controllers.DayPlansController|Критический тестовый лог

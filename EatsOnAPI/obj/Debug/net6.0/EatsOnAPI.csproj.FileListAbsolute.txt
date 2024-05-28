@@ -275,8 +275,6 @@ C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\runtimes\uni
 C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\obj\Debug\net6.0\EatsOnAPI.RazorAssemblyInfo.cache
-C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\obj\Debug\net6.0\EatsOnAPI.RazorAssemblyInfo.cs
 C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
 C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\nlog.config
@@ -287,3 +285,4 @@ C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\MailKit.dll
 C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\MimeKit.dll
 C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\NLog.MailKit.dll
 C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\Gigabyte\source\repos\EatsOnAPI\EatsOnAPI\bin\Debug\net6.0\StyleCop.dll

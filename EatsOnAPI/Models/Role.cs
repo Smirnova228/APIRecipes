@@ -7,6 +7,5 @@ namespace EatsOnAPI.Models
     {
         public string NameRole { get; set; } = null!;
         public bool? Delete { get; set; }
-
     }
 }
